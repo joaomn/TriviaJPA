@@ -15,33 +15,33 @@ public class Aplicacao {
 		Scanner scan = new Scanner(System.in);
 		
 		JogadorDAO jDAO = new JogadorDAO();
-//		Jogador j = new Jogador();
-//		
-//		System.out.println("Dgite o nome do jogador");
-//		String nome = scan.nextLine();
-//		
-//		j.setNome(nome);
-//		try {
-//			jDAO.store(j);
-//			
-//			
-//		} catch (Exception e) {
-//			System.out.println("deu ruim");
-//		}
-//		
-//		
-//
-//		Jogador j2 = new Jogador();
-//		System.out.println("Dgite o nome do jogador");
-//		int nome2 = scan.nextInt();
-//		
-//	
-//		
-//		j2 =   jDAO.getByID(nome2);
-//		
-//		
-//		
-//		System.out.println(j2.getNome());
+		Jogador j = new Jogador();
+		
+		System.out.println("Dgite o nome do jogador");
+		String nome = scan.nextLine();
+		
+		j.setNome(nome);
+		try {
+			jDAO.store(j);
+			
+			
+		} catch (Exception e) {
+			System.out.println("deu ruim");
+		}
+		
+		
+
+		Jogador j2 = new Jogador();
+		System.out.println("Dgite o nome do jogador");
+		int nome2 = scan.nextInt();
+		
+	
+		
+		j2 =   jDAO.getByID(nome2);
+		
+		
+		
+		System.out.println(j2.getNome());
 		
 		
 	List<Jogador> listaJogadores =	jDAO.getAll();
@@ -53,12 +53,19 @@ public class Aplicacao {
 			System.out.println("Idade do Jogador: " + jog.getIdade());
 			System.out.println("Codigo do Jogador: " + jog.getId());
 			System.out.println("                              ");
-			System.out.println("----------------------------\n");
+//			System.out.println("----------------------------\n");
 		}
 		
 		
 		
+		System.out.println("Digite o id do  jogador");
+		int idExcluir = scan.nextInt();
 		
+		try {
+			jDAO.delete(idExcluir);
+		} catch (Exception e) {
+			System.out.println("exclusao falhou");
+		}
 		
 		
 		

@@ -66,6 +66,23 @@ public class JogadorDAO {
 	
 	public void delete(int id) {
 		
+		Jogador jogador =	entityManager.find(Jogador.class, id);
+				
+		if(jogador != null)		{
+			
+			entityManager.getTransaction().begin();
+		entityManager.remove(jogador);
+		entityManager.getTransaction().commit();
+		
+		System.out.println("Excluido com sucesso!");
+	
+			
+		}else {
+			System.out.println("Este Jogador não existe no banco de dados");
+		}
+				
+		
+		
 		
 	
 }
