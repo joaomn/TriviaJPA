@@ -73,17 +73,17 @@ public class Aplicacao {
 		scan.nextLine();
 		
 		System.out.println("Digite a  idade a ser alterada");
-//		
-		int idadeNova = scan.nextInt();
-//		scan.next();
 		
-//		System.out.println("digite o nome novo");
-//		String nomeNovo = scan.nextLine();
+		int idadeNova = scan.nextInt();
+		scan.nextLine();
+		
+		System.out.println("digite o nome novo");
+		String nomeNovo = scan.nextLine();
 		
 		Jogador j3 = new Jogador();
 		
 		j3.setIdade(idadeNova);
-//		j3.setNome(nomeNovo);
+		j3.setNome(nomeNovo);
 		
 		try {
 			jDAO.update(idAlterar, j3);
