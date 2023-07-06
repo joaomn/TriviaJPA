@@ -86,6 +86,33 @@ public class JogadorDAO {
 		
 	
 }
+	
+	
+	public void update(int id, Jogador jogadorNovo) {
+		
+		Jogador jogador = entityManager.find(Jogador.class, id);
+		
+		if(jogadorNovo.getIdade() != 0) {
+			
+			jogador.setIdade(jogadorNovo.getIdade());
+		}
+		
+		if(jogadorNovo.getNome() != null) {
+			
+			jogador.setNome(jogadorNovo.getNome());
+		}
+		
+		
+		entityManager.getTransaction().begin();
+		
+		entityManager.persist(jogador);
+		
+		
+		entityManager.getTransaction().commit();
+		
+		
+		
+	}
 
 }
 
