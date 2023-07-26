@@ -24,5 +24,8 @@ public class Jogador {
 	private int idade;
 
 	private String nome;
+	
+	@Column(nullable = true)
+	private int score;
 
 }

@@ -23,7 +23,7 @@ public class Questao {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigo;
 	private String enunciado;
-	private double valor;
+	private int valor;
 	
 	
 	@OneToMany

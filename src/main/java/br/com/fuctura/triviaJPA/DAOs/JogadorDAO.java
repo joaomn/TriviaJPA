@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.fuctura.triviaJPA.Entitys.Jogador;
 
@@ -53,10 +54,10 @@ public class JogadorDAO {
 		
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	public List<Jogador> getAll(){
 		
-		Query getAll = entityManager.createQuery("SELECT a from Jogador a");
+		TypedQuery<Jogador> getAll = entityManager.createQuery("SELECT a from Jogador a", Jogador.class);
 		
 		List<Jogador> resultJogadores = getAll.getResultList();
 		
@@ -97,7 +98,7 @@ public class JogadorDAO {
 			jogador.setIdade(jogadorNovo.getIdade());
 		}
 		
-		if(jogadorNovo.getNome() != null) {
+		if(jogadorNovo.getNome() != null || jogadorNovo.getNome() == "") {
 			
 			jogador.setNome(jogadorNovo.getNome());
 		}
